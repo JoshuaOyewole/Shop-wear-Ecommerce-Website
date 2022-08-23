@@ -1,9 +1,7 @@
+import React from 'react';
 import {Container, Label, RadioLabel, Submit, Input, Radio} from "./auth.styled";
-import Navbar from "../components/NewNav";
-import Footer from "../components/NewFooter";
-
-
-
+/* import Navbar from "../components/NewNav";
+import Footer from "../components/NewFooter"; */
 
 
 const Register = () => {
