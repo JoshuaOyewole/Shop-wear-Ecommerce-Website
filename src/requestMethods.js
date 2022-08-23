@@ -6,6 +6,7 @@ const BASE_URL = "https://whitecoatmanila.herokuapp.com/api/";
 //     .accessToken || "";
 
 
+
 let TOKEN;
 
 if (localStorage.getItem("persist:root")) {
@@ -13,6 +14,7 @@ if (localStorage.getItem("persist:root")) {
   const currentUser = user && JSON.parse(user).currentUser;
   TOKEN = currentUser && currentUser.accessToken;  
 }
+
 
 export const publicRequest = axios.create({
   baseURL: BASE_URL,
