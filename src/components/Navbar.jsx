@@ -1,7 +1,7 @@
+import React from "react";
 import { Badge } from "@material-ui/core";
 import {ShoppingCartOutlined } from "@material-ui/icons";
 //import DehazeIcon from '@mui/icons-material/Dehaze';
-import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";

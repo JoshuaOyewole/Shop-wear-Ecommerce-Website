@@ -1,3 +1,4 @@
+import React from 'react';
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -169,16 +170,16 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {product.color?.map((c) => (
+              {/* {product.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
-              ))}
+              ))} */}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
-                {product.size?.map((s) => (
+                {/* {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
-                ))}
+                ))} */}
               </FilterSize>
             </Filter>
           </FilterContainer>
