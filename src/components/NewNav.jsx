@@ -215,7 +215,7 @@ const NewNav = () => {
               <div className="c-dropdown">
                 <Link
                   className="c-topnav-links__link--left"
-                  to="/shop"
+                  to="/made-to-measure"
                 >
                   Made-To-Measure
                 </Link>
