@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
-import Navbar from "../components/NewNav";
-import Footer from "../components/NewFooter";
+/* import Navbar from "../components/NewNav";
+import Footer from "../components/NewFooter"; */
 
 import { login } from "../redux/apiCalls";
 import { Container, Label, Input, SubmitButton, Error } from "./auth.styled";

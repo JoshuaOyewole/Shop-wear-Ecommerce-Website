@@ -4,6 +4,7 @@ import Shop from "../components/Shop";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
+import { mobile } from "../responsive";
 import styled from "styled-components";
 import Testimonial from "../components/Testimonial"
 
@@ -17,6 +18,7 @@ const IntroText = styled.p`
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  ${mobile({ fontSize: "16px"})}
 `;
 const Home = () => {
   return (
