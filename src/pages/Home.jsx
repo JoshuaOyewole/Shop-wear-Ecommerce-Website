@@ -1,7 +1,5 @@
 import React from "react";
-import Categories from "../components/Categories";
-import Footer from "../components/NewFooter";
-import Navbar from "../components/NewNav";
+/* import Categories from "../components/Categories"; */
 import Shop from "../components/Shop";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
@@ -29,7 +27,7 @@ const Home = () => {
         the Utmost Comfort & Style for Our Modern Day Heroes.
       </IntroText>
       <Shop />
-      <Categories />
+      {/* <Categories /> */}
       <Products />
    <Testimonial />
       <div>
