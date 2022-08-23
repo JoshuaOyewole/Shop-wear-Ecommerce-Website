@@ -7,14 +7,14 @@ const Container = styled.div`
   padding: 20px 60px;
   ${mobile({ padding: "30px 2px" })}
 `;
-const Grid = styled.div`
+/* const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 20px;
   margin: 20px auto;
   ${mobile({ flexDirection: "column" })}
-`;
+`; */
 
 const SecondaryHeader = styled.h2`
   text-transform: uppercase;
@@ -24,28 +24,7 @@ const SecondaryHeader = styled.h2`
   padding: 10px 60px;
 `;
 
-const ShopItem = styled.div`
-  &:first-child {
-    grid-row: 1/3;
-    grid-column: 1/2;
-  }
-  &:nth-child(2) {
-    grid-column: 2/3;
-    grid-row: 1/1.5;
-  }
-  &:nth-child(3) {
-    grid-row: 1/3;
-    grid-column: 3/4;
-  }
-  &:nth-child(4) {
-    grid-row: 1.5/3;
-    grid-column: 1/2;
-  }
-  &:last-child {
-    grid-column: 3/4;
-    grid-row: 2/3;
-  }
-`;
+
 
 function Shop() {
   return (
@@ -84,6 +63,7 @@ function Shop() {
                   <img
                     className="c-home__store__img"
                     src="/images/feature_mt.jpg"
+                    alt='featured image'
                   />
                   <div
                     className="position-absolute w-100 h-100"
@@ -105,6 +85,7 @@ function Shop() {
                   <img
                     className="c-home__store__img"
                     src="/images/feature1.jpg"
+                    alt='featured image'
                   />
                   <div
                     className="position-absolute w-100 h-100"

@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
+import MadeToMeasure from './pages/MadeToMeasure'
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Navbar from "./components/NewNav";
@@ -31,6 +32,9 @@ const App = () => {
           </Route>
           <Route path="/products/:category">
             <ProductList />
+          </Route>
+          <Route path="/made-to-measure/scrubsuit">
+            <MadeToMeasure />
           </Route>
           <Route path="/shop">
             <Shop />
