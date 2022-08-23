@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Navbar from "./components/NewNav";
 import Footer from "./components/NewFooter";
+import ContactUs from "./pages/ContactUs";
 import {
   BrowserRouter as Router,
   Switch,
@@ -43,6 +44,9 @@ const App = () => {
           </Route>
           <Route path="/success">
             <Success />
+          </Route>
+          <Route path="/contact-us">
+            <ContactUs />
           </Route>
           <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
           <Route path="/register">
