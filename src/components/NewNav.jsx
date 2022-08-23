@@ -29,7 +29,7 @@ const NewNav = () => {
       <style dangerouslySetInnerHTML={{ __html: "" }} />
       <div className="c-topnav--sm__bag">
         <div className="position-relative">
-          <a className href="bag.html">
+          <a className href="/cart">
             <img
               src={shop}
               alt="contact us"
