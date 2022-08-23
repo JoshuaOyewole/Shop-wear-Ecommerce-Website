@@ -130,12 +130,12 @@ const NewNav = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link c-topnav--sm__link" to="/cat/women">
+              <Link className="nav-link c-topnav--sm__link" to="/shop?cat=female">
                 Shop Women
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link c-topnav--sm__link" to="/cat/men">
+              <Link className="nav-link c-topnav--sm__link" to="/shop?cat=male">
                 Shop Men
               </Link>
             </li>
@@ -147,7 +147,7 @@ const NewNav = () => {
             <li className="nav-item">
               <Link
                 className="nav-link c-topnav--sm__link"
-                to="/cat/made-to-measure"
+                to="/shop"
               >
                 Made-To-Measure
               </Link>
@@ -199,14 +199,14 @@ const NewNav = () => {
             </div> */}
             <div className="d-inline-block">
               <div className="c-dropdown">
-                <Link className="c-topnav-links__link--left" to="/cat/women">
+                <Link className="c-topnav-links__link--left" to="/shop?cat=female">
                   Women
                 </Link>
               </div>
             </div>
             <div className="d-inline-block">
               <div className="c-dropdown">
-                <Link className="c-topnav-links__link--left" to="/cat/men">
+                <Link className="c-topnav-links__link--left" to="/shop?cat=male">
                   Men
                 </Link>
               </div>
@@ -215,7 +215,7 @@ const NewNav = () => {
               <div className="c-dropdown">
                 <Link
                   className="c-topnav-links__link--left"
-                  to="/cat/made-to-measure"
+                  to="/made-to-measure"
                 >
                   Made-To-Measure
                 </Link>
@@ -249,7 +249,7 @@ const NewNav = () => {
               </Link>
             </div>
             <div className="d-inline-block">
-              <Link className="c-topnav-links__link--right" to="/contact">
+              <Link className="c-topnav-links__link--right" to="/contact-us">
                 <img src={MailWhite} alt="contact us" style={{ width: 20 }} />
               </Link>
             </div>

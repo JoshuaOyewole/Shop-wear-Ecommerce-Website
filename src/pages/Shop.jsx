@@ -1,9 +1,11 @@
 import React from "react";
 import ShopCard from "../components/ShopCard";
+import { useLocation } from "react-router-dom";
 
 const data = [
   {
     header: "MoveTechⓇ Scrub Top Women",
+    gender: "female",
     products: [
       {
         name: "4-Pocket Scrub Top - Women",
@@ -51,6 +53,7 @@ const data = [
   },
   {
     header: "MOVETECHⓇ SCRUB TOP MEN",
+    gender: "male",
     products: [
       {
         name: "4-Pocket Scrub Top - Male",
@@ -98,6 +101,7 @@ const data = [
   },
   {
     header: "MOVETECHⓇ SCRUB PANTS WOMEN",
+    gender: "female",
     products: [
       {
         name: "Jogger Scrub Pants - Women",
@@ -145,6 +149,7 @@ const data = [
   },
   {
     header: "MOVETECHⓇ SCRUB PANTS MEN",
+    gender: "male",
     products: [
       {
         name: "Jogger Scrub Pants - Male",
@@ -192,6 +197,7 @@ const data = [
   },
   {
     header: "LONG COAT WOMEN",
+    gender: "female",
     products: [
       {
         name: "Long Coat Pro+® - Women",
@@ -225,6 +231,7 @@ const data = [
   },
   {
     header: "LONG COAT MEN",
+    gender: "male",
     products: [
       {
         name: "Long Coat Pro+® - Male",
@@ -258,6 +265,7 @@ const data = [
   },
   {
     header: "LONG SLEEVES BLAZER WOMEN",
+    gender: "female",
     products: [
       {
         name: "Long Sleeves Blazer Pro+® - Women",
@@ -291,6 +299,7 @@ const data = [
   },
   {
     header: "LONG SLEEVES BLAZER MEN",
+    gender: "male",
     products: [
       {
         name: "Long Sleeves Blazer Pro+® - Male",
@@ -324,6 +333,7 @@ const data = [
   },
   {
     header: "SHORT SLEEVES BLAZER WOMEN",
+    gender: "female",
     products: [
       {
         name: "Short Sleeves Blazer - Women",
@@ -343,6 +353,7 @@ const data = [
   },
   {
     header: "SHORT SLEEVES BLAZER MEN",
+    gender: "male",
     products: [
       {
         name: "Short Sleeves Blazer - Male",
@@ -362,7 +373,20 @@ const data = [
   },
 ];
 
+function useQuery() {
+  const { search } = useLocation();
+
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
 const Shop = () => {
+  let query = useQuery();
+
+
+  const cat = query.get("cat");
+
+
+
   return (
     <div>
       <div className="c-height-70">
@@ -404,27 +428,84 @@ const Shop = () => {
         <div className="container-fluid c-shop__container">
           <div className="row c-shop__row--3" style={{ maxWidth: 1440 }} />
         </div>
-        {data.map((section, i) => (
-          <div key={i}>
-            <div id="scrubtopHeader" className="c-shop__header">
-              {section.header}
-            </div>
-            <div className="container-fluid c-shop__container">
-              <div className="row c-shop__row--3" style={{ maxWidth: 1440 }}>
-                {section.products.map((product, i) => (
-                  <ShopCard
-                    name={product.name}
-                    sub={product.sub}
-                    price={product.price}
-                    colors={product.colors}
-                    img={product.img}
-                    key={i}
-                  />
-                ))}
-              </div>
+       
+    {
+      cat == "male" ?
+      data.length > 0 &&
+      data.filter(section => section.gender == "male").map((section, i) => (
+        <div key={i}>
+          <div id="scrubtopHeader" className="c-shop__header">
+            {section.header}
+          </div>
+          <div className="container-fluid c-shop__container">
+            <div
+              className="row c-shop__row--3"
+              style={{ maxWidth: 1440 }}
+            >
+              {section.products.map((product, i) => (
+                <ShopCard
+                  name={product.name}
+                  sub={product.sub}
+                  price={product.price}
+                  colors={product.colors}
+                  img={product.img}
+                  key={i}
+                />
+              ))}
             </div>
           </div>
-        ))}
+        </div>
+      )) : cat == "female" ? data.length > 0 &&
+      data.filter(section => section.gender == "female").map((section, i) => (
+        <div key={i}>
+          <div id="scrubtopHeader" className="c-shop__header">
+            {section.header}
+          </div>
+          <div className="container-fluid c-shop__container">
+            <div
+              className="row c-shop__row--3"
+              style={{ maxWidth: 1440 }}
+            >
+              {section.products.map((product, i) => (
+                <ShopCard
+                  name={product.name}
+                  sub={product.sub}
+                  price={product.price}
+                  colors={product.colors}
+                  img={product.img}
+                  key={i}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )) : data.length > 0 &&
+      data.map((section, i) => (
+        <div key={i}>
+         
+          <div id="scrubtopHeader" className="c-shop__header">
+            {section.header}
+          </div>
+          <div className="container-fluid c-shop__container">
+            <div
+              className="row c-shop__row--3"
+              style={{ maxWidth: 1440 }}
+            >
+              {section.products.map((product, i) => (
+                <ShopCard
+                  name={product.name}
+                  sub={product.sub}
+                  price={product.price}
+                  colors={product.colors}
+                  img={product.img}
+                  key={i}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
       </div>
     </div>
   );
