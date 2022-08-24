@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from "../components/NewFooter";
 import Navbar from "../components/NewNav";
 import LineDivider from "../components/LineDivider/LineDivider"
 
@@ -8,7 +7,7 @@ function MadeToMeasure() {
     return (
         <div>
             <Navbar />
-            <header>
+            <header className={{marginTop:'4rem'}}>
                 <h1>
                     MADE-TO-MEASURE
                 </h1>
@@ -169,7 +168,6 @@ function MadeToMeasure() {
                     </div>
             </div>
         <LineDivider />
-            <Footer />
         </div>
     )
 }

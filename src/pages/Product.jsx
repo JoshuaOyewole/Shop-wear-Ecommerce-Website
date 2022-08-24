@@ -3165,6 +3165,26 @@ const Product = () => {
                           2-Pocket Scrub Top - Men
                         </div>
                       </div>
+                      <div style={{ maxWidth: 90 }} className="mx-3">
+                        <a
+                          className="w-100"
+                          href="#"
+                          target="_blank"
+                        >
+                          <img
+                            className="w-100"
+                            style={{ height: 135, objectFit: "cover" }}
+                            src="/images/scrub-pant-men/jogger-scrub-pant.png"
+                            alt
+                          />
+                        </a>
+                        <div
+                          className="text-center p-0"
+                          style={{ wordWrap: "break-word", fontSize: 10 }}
+                        >
+                          2-Pocket Scrub Top - Men
+                        </div>
+                      </div>
                      
                     </div>
                   </div>
