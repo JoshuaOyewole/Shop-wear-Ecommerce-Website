@@ -6,7 +6,7 @@ import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
-import { useHistory, Link} from "react-router";
+import { useHistory} from "react-router";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
