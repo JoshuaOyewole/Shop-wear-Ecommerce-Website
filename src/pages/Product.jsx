@@ -1,8 +1,6 @@
 import React from "react";
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
-import Announcement from "../components/Announcement";
-import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -160,6 +158,7 @@ const Product = () => {
   });
   return (
     <Container>
+
       <Announcement />
       {product._id === null ? (
         <>Loading...</>
@@ -177,6 +176,7 @@ const Product = () => {
                 <FilterTitle>Color</FilterTitle>
 
                 {/* {product.color?.map((c) => (
+
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
               ))} */}
                 <div className="d-flex flex-wrap justify-content-center align-items-center mt-1">
@@ -216,7 +216,9 @@ const Product = () => {
         </Wrapper>
       )}
 
+
       <Newsletter />
+
     </Container>
   );
 };
