@@ -33,6 +33,8 @@ const Register = () => {
     e.preventDefault();
     register(dispatch, user);
   };
+
+  
   return (
     <>
       <Container>
