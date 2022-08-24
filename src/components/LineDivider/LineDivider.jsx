@@ -3,7 +3,7 @@ import "./LineDivider.css"
 
 function LineDivider() {
   return (
-    <div className='divider'>LineDivider</div>
+    <div className='divider'></div>
   )
 }
 

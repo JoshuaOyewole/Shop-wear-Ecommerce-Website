@@ -22,7 +22,7 @@ const persistConfig = {
 const userPersistConfig = {
   key: "user",
   storage: storage,
- /*  blacklist: ["error", "isFetching"], */
+  blacklist: ["error", "isFetching"]
 };
 
 const rootReducer = combineReducers({

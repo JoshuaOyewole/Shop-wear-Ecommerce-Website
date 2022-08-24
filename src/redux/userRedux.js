@@ -4,14 +4,7 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     currentUser: {
-      firstname: "",
-      lastname: "",
-      username: "",
-      email: "",
-      password: "",
-      gender:"",
-      phone:12345,
-      isAdmin: false,
+      currentUser: null || "",
     },
     isFetching: false,
     error: false,

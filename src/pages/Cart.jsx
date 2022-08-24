@@ -2,7 +2,6 @@ import React from 'react';
 import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import Announcement from "../components/Announcement";
 import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
@@ -185,8 +184,6 @@ const Cart = () => {
   }, [cart, stripeToken, cart.total, history]);
   return (
     <Container>
-     
-      <Announcement />
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
