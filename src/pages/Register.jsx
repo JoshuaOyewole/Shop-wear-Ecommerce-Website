@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Label, RadioLabel, Submit, Input, Radio } from "./auth.styled";
+import { Container, Label, RadioLabel, Submit, Input, Radio, Error } from "./auth.styled";
 import { useState } from "react";
 import { register } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,8 +31,10 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    register(dispatch, {user});
+    register(dispatch, user);
   };
+
+  
   return (
     <>
       <Container>
