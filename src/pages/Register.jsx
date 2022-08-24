@@ -43,9 +43,9 @@ const Register = () => {
             <div className="container mt-4 user__register-container ">
               <form method="post" action="#">
                 <Label className="mt-2 mb-0 ">First Name</Label>
-                <Input type="text" onChange={handleChange} name="firstname" defaultValue='' />
+                <Input type="text" onChange={handleChange} name="firstname"  />
                 <Label className="mt-2 mb-0 ">Last Name</Label>
-                <Input type="text" onChange={handleChange} name="lastname" defaultValue='' />
+                <Input type="text" onChange={handleChange} name="lastname"  />
                 <Label className="mt-2 mb-2 ">Gender</Label>
                 <Radio 
                     type="radio" 
