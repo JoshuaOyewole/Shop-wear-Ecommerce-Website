@@ -1,5 +1,5 @@
 import React from "react";
-import { Add, Remove } from "@material-ui/icons";
+//import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
@@ -167,6 +167,7 @@ const Product = () => {
     currency: "USD",
   });
   return (
+
     <>
       <Container>
         <Announcement />
@@ -263,6 +264,7 @@ const Product = () => {
                           })
                         }
                       />
+
 
                       <div
                         className={`${chart.f_chart ? "d-block" : "d-none"}`}
@@ -700,6 +702,7 @@ const Product = () => {
                     onChange={() => setEmbroideryLogo(!embroideryLogo)}
                   />
                 </div>
+
                 {embroideryLogo && (
                   <div id="embroidery-logo-block" className=" ps-3 pe-1">
                     <div className=" text-left mb-3">
@@ -3197,6 +3200,7 @@ const Product = () => {
       </Container>
       
     </>
+
   );
 };
 

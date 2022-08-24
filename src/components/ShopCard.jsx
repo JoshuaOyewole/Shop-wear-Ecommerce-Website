@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ShopCard = ({ id, name, img, colors, price, sub, size, inStock }) => {
   let dollarUS = Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "PHP",
   });
   return (
     <div className="col-md-4 c-shop__block__col">
