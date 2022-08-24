@@ -7,6 +7,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory} from "react-router";
+import { Link } from 'react-router-dom';
 
 const KEY = process.env.REACT_APP_STRIPE;
 
