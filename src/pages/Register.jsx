@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Label, RadioLabel, Submit, Input, Radio } from "./auth.styled";
+import { Container, Label, RadioLabel, Submit, Input, Radio, Error } from "./auth.styled";
 import { useState } from "react";
 import { register } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,7 +31,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    register(dispatch, {user});
+    register(dispatch, user);
   };
   return (
     <>
@@ -47,9 +47,12 @@ const Register = () => {
                     type="text" 
                     onChange={handleChange} 
                     name="firstname"  
+                    required
                 />
                 <Label className="mt-2 mb-0 ">Last Name</Label>
-                <Input type="text" onChange={handleChange} name="lastname"  />
+                <Input type="text" onChange={handleChange} name="lastname"  required/>
+                <Label className="mt-2 mb-0 ">Username</Label>
+                <Input type="text" onChange={handleChange} name="username"  required/>
                 <Label className="mt-2 mb-2 ">Gender</Label>
                 <Radio 
                     type="radio" 
@@ -70,13 +73,13 @@ const Register = () => {
                 <RadioLabel htmlFor="female">Female</RadioLabel>
                 <br />
                 <Label className="mt-2 mb-0 ">Your Email</Label>
-                <Input type="email" name="email" onChange={handleChange} />
+                <Input type="email" name="email" required onChange={handleChange} />
                 <Label className="mt-2 mb-0 ">
                   Your Password (Minimum 8 characters)
                 </Label>
                 <Input type="password" name="password" onChange={handleChange} />
                 <Label className="mt-2 mb-0 ">Confirm Password</Label>
-                <Input type="password" onChange={handleChange} name="password_confirmation" />
+                <Input type="password" onChange={handleChange} required name="password_confirmation" />
                 <Label className="mb-0 ">Mobile Number (Required)</Label>
                 <Input type="text" onChange={handleChange} name="phone" />
                 <div className="float-end">
