@@ -37,7 +37,7 @@ function Shop() {
               className=" col-md-5 p-0 position-relative"
               style={{ maxHeight: 700 }}
             >
-              <Link href="/cat/women">
+              <Link to="/shop?cat=women">
                 <img
                   className="c-home__store__img"
                   src="/images/ssf.jpg"
@@ -81,7 +81,7 @@ function Shop() {
                 </Link>
               </div>
               <div className="position-relative" style={{ height: "60%" }}>
-                <Link to="/cat/men">
+                <Link to="/shop?cat=men">
                   <img
                     className="c-home__store__img"
                     src="/images/feature1.jpg"

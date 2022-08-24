@@ -133,13 +133,13 @@ const NewNav = () => {
             <li className="nav-item">
               <Link
                 className="nav-link c-topnav--sm__link"
-                to="/shop?cat=female"
+                to="/shop?cat=women"
               >
                 Shop Women
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link c-topnav--sm__link" to="/shop?cat=male">
+              <Link className="nav-link c-topnav--sm__link" to="/shop?cat=men">
                 Shop Men
               </Link>
             </li>
@@ -229,7 +229,7 @@ const NewNav = () => {
               <div className="c-dropdown">
                 <Link
                   className="c-topnav-links__link--left"
-                  to="/shop?cat=female"
+                  to="/shop?cat=women"
                 >
                   Women
                 </Link>
@@ -239,7 +239,7 @@ const NewNav = () => {
               <div className="c-dropdown">
                 <Link
                   className="c-topnav-links__link--left"
-                  to="/shop?cat=male"
+                  to="/shop?cat=men"
                 >
                   Men
                 </Link>
