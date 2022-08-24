@@ -1,24 +1,24 @@
 import React from "react";
-import Categories from "../components/Categories";
-import Footer from "../components/NewFooter";
-import Navbar from "../components/NewNav";
+/* import Categories from "../components/Categories"; */
 import Shop from "../components/Shop";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
+import { mobile } from "../responsive";
 import styled from "styled-components";
 import Testimonial from "../components/Testimonial"
 
 const IntroText = styled.p`
   width: 100%;
   max-width: 800px;
-  font-weight: 400;
-  font-size: 1.8rem;
+  font-weight: 600;
+  font-size: 2rem;
   text-align: center;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  ${mobile({ fontSize: "24px"})}
 `;
 const Home = () => {
   return (
@@ -29,7 +29,7 @@ const Home = () => {
         the Utmost Comfort & Style for Our Modern Day Heroes.
       </IntroText>
       <Shop />
-      <Categories />
+      {/* <Categories /> */}
       <Products />
    <Testimonial />
       <div>

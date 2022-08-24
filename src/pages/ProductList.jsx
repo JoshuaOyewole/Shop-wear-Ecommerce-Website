@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Navbar from "../components/NewNav";
 import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
-import Footer from "../components/NewFooter";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";

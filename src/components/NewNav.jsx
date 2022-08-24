@@ -30,6 +30,7 @@ const NewNav = () => {
       <style dangerouslySetInnerHTML={{ __html: "" }} />
       <div className="c-topnav--sm__bag">
         <div className="position-relative">
+
           <Link to="/cart">
             <MenuItem2>
               <Badge badgeContent={quantity} color="primary">
@@ -37,6 +38,7 @@ const NewNav = () => {
               </Badge>
             </MenuItem2>
           </Link>
+
         </div>
       </div>
       <div
@@ -149,7 +151,9 @@ const NewNav = () => {
             <li className="nav-item">
               <Link
                 className="nav-link c-topnav--sm__link"
-                to="/made-to-measure"
+
+                to="/made-to-measure/scrubsuit"
+
               >
                 Made-To-Measure
               </Link>
@@ -243,7 +247,12 @@ const NewNav = () => {
             </div>
             <div className="d-inline-block">
               <div className="c-dropdown">
-                <Link className="c-topnav-links__link--left" to="/shop">
+
+                <Link
+                  className="c-topnav-links__link--left"
+                  to="/made-to-measure/scrubsuit"
+                >
+
                   Made-To-Measure
                 </Link>
               </div>

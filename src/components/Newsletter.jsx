@@ -14,13 +14,15 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 70px;
   margin-bottom: 20px;
+  ${mobile({ fontSize: "36px" })}
 `;
 
 const Desc = styled.div`
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
-  ${mobile({ textAlign: "center" })}
+  ${mobile({ textAlign: "center",fontSize: "18px",
+  fontWeight: "300", padding: "1rem 2rem",marginBottom: "20px"})}
 
 `;
 
