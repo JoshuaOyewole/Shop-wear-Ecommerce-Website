@@ -11,7 +11,7 @@ import { useHistory } from "react-router";
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div`
-  margin: 100px 0;
+  margin: 65px 0;
 `;
 
 const Wrapper = styled.div`
@@ -132,7 +132,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  height: 55vh;
 `;
 
 const SummaryTitle = styled.h1`

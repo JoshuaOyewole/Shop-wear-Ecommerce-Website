@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ShopCard from "../components/ShopCard";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const data = [
   {
@@ -417,11 +418,23 @@ function useQuery() {
 
 const Shop = () => {
   let query = useQuery();
-
+  const [products, setProducts] = useState([]);
 
   const cat = query.get("cat");
 
-
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get(
+          cat
+            ? `https://whitecoatmanila.herokuapp.com/api/products?category=${cat}`
+            : "https://whitecoatmanila.herokuapp.com/api/products"
+        );
+        setProducts(res.data);
+      } catch (err) {}
+    };
+    getProducts();
+  }, [cat]);
 
   return (
     <div>
@@ -464,8 +477,34 @@ const Shop = () => {
         <div className="container-fluid c-shop__container">
           <div className="row c-shop__row--3" style={{ maxWidth: 1440 }} />
         </div>
-       
-    {
+        {products.length < 1 ? (
+          <>Loading...</>
+        ) : (
+          <div>
+            <div id="scrubtopHeader" className="c-shop__header">
+              PRODUCTS
+            </div>
+            <div className="container-fluid c-shop__container">
+              <div className="row c-shop__row--3" style={{ maxWidth: 1440 }}>
+                {products.map((product) => (
+                  <ShopCard
+                    id={product._id}
+                    name={product.title}
+                    sub={product.description}
+                    price={product.price}
+                    colors={product.color}
+                    size={product.size}
+                    img={product.img}
+                    inStock={product.inStock}
+                    key={product._id}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* {
       cat == "male" ?
       data.length > 0 &&
       data.filter(section => section.gender == "male").map((section, i) => (
@@ -541,7 +580,7 @@ const Shop = () => {
           </div>
         </div>
       ))
-    }
+    } */}
       </div>
     </div>
   );
