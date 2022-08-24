@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -11,7 +11,8 @@ import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 
 const Container = styled.div`
-margin: 100px 0;
+  margin: 65px 0;
+  
 `;
 
 const Wrapper = styled.div`
@@ -28,7 +29,7 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
-  ${mobile({ height: "40vh" })}
+  ${mobile({ height: "40vh" , objectFit: "contain" })}
 `;
 
 const InfoContainer = styled.div`
@@ -61,11 +62,13 @@ const FilterContainer = styled.div`
 const Filter = styled.div`
   display: flex;
   align-items: center;
+
 `;
 
 const FilterTitle = styled.span`
   font-size: 20px;
   font-weight: 200;
+  padding-left: 5px;
 `;
 
 const FilterColor = styled.div`
@@ -149,54 +152,71 @@ const Product = () => {
   };
 
   const handleClick = () => {
-    dispatch(
-      addProduct({ ...product, quantity, color, size })
-    );
+    dispatch(addProduct({ ...product, quantity, color, size }));
   };
+  let dollarUS = Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
   return (
     <Container>
-    
       <Announcement />
-      <Wrapper>
-        <ImgContainer>
-          <Image src={product.img} />
-        </ImgContainer>
-        <InfoContainer>
-          <Title>{product.title}</Title>
-          <Desc>{product.desc}</Desc>
-          <Price>$ {product.price}</Price>
-          <FilterContainer>
-            <Filter>
-              <FilterTitle>Color</FilterTitle>
+      {product._id === null ? (
+        <>Loading...</>
+      ) : (
+        <Wrapper>
+          <ImgContainer>
+            <Image src={product.img} />
+          </ImgContainer>
+          <InfoContainer>
+            <Title>{product.title}</Title>
+            <Desc>{product.desc}</Desc>
+            <Price> {dollarUS.format(product.price)}</Price>
+            <FilterContainer>
+              <Filter>
+                <FilterTitle>Color</FilterTitle>
 
-              {/* {product.color?.map((c) => (
+                {/* {product.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
               ))} */}
-
-            </Filter>
-            <Filter>
-              <FilterTitle>Size</FilterTitle>
-              <FilterSize onChange={(e) => setSize(e.target.value)}>
-
-                {/* {product.size?.map((s) => (
-                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                <div className="d-flex flex-wrap justify-content-center align-items-center mt-1">
+                  {product.color && product.color.map((c, i) => (
+                    <div key={i} onClick={() => setColor(c)} className="" role="button">
+                      <div
+                        className={`c-shop__color  my-1 ${color === c ? "c-shop__color--selected" : ""}`}
+                        style={{ background: c }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </Filter>
+              <Filter>
+                <FilterTitle>Size</FilterTitle>
+                <select className="form-control ms-2 px-4 " onChange={(e) => setSize(e.target.value)}>
+                  {
+                   product.size && product.size.map((size) =>(
+                      <option key={size} >{size}</option>
+                    ))
+                  }
+                  {/* {product.size && product.size?.map((s) => (
+                  <option value={s} key={s}>{s}</option>
                 ))} */}
+                </select>
+              </Filter>
+            </FilterContainer>
+            <AddContainer>
+              <AmountContainer>
+                <button className="btn btn-primary btn-xs" onClick={() => handleQuantity("dec")} >-</button>
+                <Amount>{quantity}</Amount>
+                <button className="btn btn-success btn-xs"  onClick={() => handleQuantity("inc")} >+</button>
+              </AmountContainer>
+              <Button onClick={handleClick}>ADD TO CART</Button>
+            </AddContainer>
+          </InfoContainer>
+        </Wrapper>
+      )}
 
-              </FilterSize>
-            </Filter>
-          </FilterContainer>
-          <AddContainer>
-            <AmountContainer>
-              <Remove onClick={() => handleQuantity("dec")} />
-              <Amount>{quantity}</Amount>
-              <Add onClick={() => handleQuantity("inc")} />
-            </AmountContainer>
-            <Button onClick={handleClick}>ADD TO CART</Button>
-          </AddContainer>
-        </InfoContainer>
-      </Wrapper>
       <Newsletter />
-
     </Container>
   );
 };
