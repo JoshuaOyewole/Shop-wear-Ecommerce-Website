@@ -4,8 +4,8 @@
       "desc": "MoveTechⓇ Plus",
       "price": "1,495",
       "categories":['women','scrub-top-women'],
-     " size":['small', 'medium', 'large'],
-      img: "scrub-top-women/4-pocket-scrub-top-women.png",
+     "size":['small', 'medium', 'large'],
+      "img" :"scrub-top-women/4-pocket-scrub-top-women.png",
       "colors": [
         "#814500",
         "#9f687f",
@@ -305,7 +305,7 @@
     },
     {
       "title": "Long Sleeves Blazer  - Male",
-      sub: "MoveTechⓇ Plus",
+      "desc": "MoveTechⓇ Plus",
       "price": "PHP 1,495",
       "categories":['men','long-sleeve-blazer-men'],
      " size":['small', 'medium', 'large'],
@@ -321,7 +321,7 @@
     },
     {
       "title": "Short Sleeves Blazer - Women",
-      sub: "MoveTechⓇ Plus",
+      "desc": "MoveTechⓇ Plus",
       "price": "PHP 1,495",
       "categories":['women','long-sleeve-blazer-women'],
      " size":['small', 'medium', 'large'],
@@ -337,7 +337,7 @@
     },
  {
       "title": "Short Sleeves Blazer - Men",
-      sub: "MoveTechⓇ Plus",
+      "desc": "MoveTechⓇ Plus",
       "price": "PHP 1,495",
       "categories":['women','short-sleeve-blazer-men'],
      " size":['small', 'medium', 'large'],
@@ -358,17 +358,20 @@
   
 const data = [
     {
-      header: "MoveTechⓇ Scrub Top Women",
-      gender: "female",
-      products: [
+      "header": "MoveTechⓇ Scrub Top Women",
+      "gender": "female",
+      "products": [
         {
-          title: "4-Pocket Scrub Top - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['women','scrub-top-women'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-top-women/4-pocket-scrub-top-women.png",
-          colors: [
+        "_id": {
+        "$oid": "63069083791cee17d07ec36d"
+    },
+          "title": "4-Pocket Scrub Top - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":["women","scrub-top-women"],
+         " size":["small", "medium", "large"],
+          "img" :"scrub-top-women/4-pocket-scrub-top-women.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -378,13 +381,16 @@ const data = [
           ],
         },
         {
-          title: "3-Pocket Scrub Top - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,295",
-          categories:['women','scrub-top-women'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-top-women/4-pocket-scrub-top-women2.png",
-          colors: [
+            "_id": {
+                "$oid": "63064083791cee17d07ec36d"
+            },
+          "title": "3-Pocket Scrub Top - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1295",
+          "categories":["women","scrub-top-women"],
+         " size":["small", "medium", "large"],
+          "img" :"scrub-top-women/4-pocket-scrub-top-women2.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -394,13 +400,16 @@ const data = [
           ],
         },
         {
-          title: "Mandarin Scrub Top - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,195",
-          categories:['women','scrub-top-women'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-top-women/4-pocket-scrub-top-women3.png",
-          colors: [
+            "_id": {
+                "$oid": "63029083791cee17d07ec36d"
+            },
+          "title": "Mandarin Scrub Top - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1195",
+          "categories":["women","scrub-top-women"],
+         " size":["small", "medium", "large"],
+          "img" :"scrub-top-women/4-pocket-scrub-top-women3.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -412,17 +421,17 @@ const data = [
       ],
     },
     {
-      header: "MOVETECHⓇ SCRUB TOP MEN",
-      gender: "male",
-      products: [
+      "header": "MOVETECHⓇ SCRUB TOP MEN",
+      "gender": "male",
+      "products": [
         {
-          title: "4-Pocket Scrub Top - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['men','scrub-top-men'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-top-men/4-pocket-scrub-top.png",
-          colors: [
+          "title": "4-Pocket Scrub Top - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":["men","scrub-top-men"],
+         " size":["small", "medium", "large"],
+          "img" :"scrub-top-men/4-pocket-scrub-top.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -432,13 +441,13 @@ const data = [
           ],
         },
         {
-          title: "3-Pocket Scrub Top - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,695",
-          categories:['men','scrub-top-men'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-top-men/4-pocket-scrub-top2.png",
-          colors: [
+          "title": "3-Pocket Scrub Top - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1695",
+          "categories":['men','scrub-top-men'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-top-men/4-pocket-scrub-top2.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -448,67 +457,13 @@ const data = [
           ],
         },
         {
-          title: "Zip-Up Polo Scrub Top - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['men','scrub-top-men'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-top-men/zip-up-polo-scrub-top.png",
-          colors: [
-            "#814500",
-            "#9f687f",
-            "#387e7c",
-            "#333541",
-            "#9f687f",
-            "#814500",
-          ],
-        },
-      ],
-    },
-    {
-      header: "MOVETECHⓇ SCRUB PANTS WOMEN",
-      gender: "female",
-      products: [
-        {
-          title: "Jogger Scrub Pants - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,295",
-          categories:['women','scrub-pant-women'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-pant-women/jogger-scrub-pants.png",
-          colors: [
-            "#814500",
-            "#9f687f",
-            "#387e7c",
-            "#333541",
-            "#9f687f",
-            "#814500",
-          ],
-        },
-        {
-          title: "Straight Cut Scrub Pants - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,235",
-          categories:['women','scrub-pant-women'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-pant-women/straight-cut-scrub-pants.png",
-          colors: [
-            "#814500",
-            "#9f687f",
-            "#387e7c",
-            "#333541",
-            "#9f687f",
-            "#814500",
-          ],
-        },
-        {
-          title: "Jogger Scrub Pants - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['women','scrub-pant-women'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-pant-women/jogger-scrub-pants3.png",
-          colors: [
+          "title": "Zip-Up Polo Scrub Top - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['men','scrub-top-men'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-top-men/zip-up-polo-scrub-top.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -520,17 +475,17 @@ const data = [
       ],
     },
     {
-      header: "MOVETECHⓇ SCRUB PANTS MEN",
-      gender: "male",
-      products: [
+      "header": "MOVETECHⓇ SCRUB PANTS WOMEN",
+      "gender": "female",
+      "products": [
         {
-          title: "Jogger Scrub Pants - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['men','scrub-pant-men'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-pant-men/jogger-scrub-pant.png",
-          colors: [
+          "title": "Jogger Scrub Pants - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1295",
+          "categories":['women','scrub-pant-women'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-pant-women/jogger-scrub-pants.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -540,13 +495,13 @@ const data = [
           ],
         },
         {
-          title: "Jogger Scrub Pants - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['men','scrub-pant-men'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-pant-men/jogger-scrub-pant2.png",
-          colors: [
+          "title": "Straight Cut Scrub Pants - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1235",
+          "categories":['women','scrub-pant-women'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-pant-women/straight-cut-scrub-pants.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -556,51 +511,13 @@ const data = [
           ],
         },
         {
-          title: "Jogger Scrub Pants - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['men','scrub-pant-men'],
-          size:['small', 'medium', 'large'],
-          img: "scrub-pant-men/jogger-scrub-pant3.png",
-          colors: [
-            "#814500",
-            "#9f687f",
-            "#387e7c",
-            "#333541",
-            "#9f687f",
-            "#814500",
-          ],
-        },
-      ],
-    },
-    {
-      header: "LONG COAT WOMEN",
-      gender: "female",
-      products: [
-        {
-          title: "Long Coat Pro+® - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['women','long-coat-women'],
-          size:['small', 'medium', 'large'],
-          img: "long-coat-women/long-coat-women.png",
-          colors: [
-            "#814500",
-            "#9f687f",
-            "#387e7c",
-            "#333541",
-            "#9f687f",
-            "#814500",
-          ],
-        },
-        {
-          title: "Long Coat Pro+® - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['women','long-coat-women'],
-          size:['small', 'medium', 'large'],
-          img: "long-coat-women/long-coat-women2.png",
-          colors: [
+          "title": "Jogger Scrub Pants - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['women','scrub-pant-women'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-pant-women/jogger-scrub-pants3.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -612,17 +529,17 @@ const data = [
       ],
     },
     {
-      header: "LONG COAT MEN",
-      gender: "male",
-      products: [
+      "header": "MOVETECHⓇ SCRUB PANTS MEN",
+      "gender": "male",
+      "products": [
         {
-          title: "Long Coat Pro+® - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['men','long-coat-men'],
-          size:['small', 'medium', 'large'],
-          img: "long-coat-men/long-coat-men.png",
-          colors: [
+          "title": "Jogger Scrub Pants - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['men','scrub-pant-men'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-pant-men/jogger-scrub-pant.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -632,35 +549,13 @@ const data = [
           ],
         },
         {
-          title: "Long Coat Pro+® - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['men','long-coat-men'],
-          size:['small', 'medium', 'large'],
-          img: "long-coat-men/long-coat-pro+.png",
-          colors: [
-            "#814500",
-            "#9f687f",
-            "#387e7c",
-            "#333541",
-            "#9f687f",
-            "#814500",
-          ],
-        },
-      ],
-    },
-    {
-      header: "LONG SLEEVES BLAZER WOMEN",
-      gender: "female",
-      products: [
-        {
-          title: "Long Sleeves Blazer Pro+® - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "1,495",
-          categories:['women','long-sleeve-blazer-women'],
-          size:['small', 'medium', 'large'],
-          img: "long-sleeve-blazer-women/pro-longsleeves-women01.jpg",
-          colors: [
+          "title": "Jogger Scrub Pants - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['men','scrub-pant-men'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-pant-men/jogger-scrub-pant2.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -670,13 +565,13 @@ const data = [
           ],
         },
         {
-          title: "Long Sleeves Blazer  - Women",
-          desc: "MoveTechⓇ Plus",
-          price: "PHP 1,495",
-          categories:['women','long-sleeve-blazer-women'],
-          size:['small', 'medium', 'large'],
-          img: "long-sleeve-blazer-women/long-sleeves-blazer.png",
-          colors: [
+          "title": "Jogger Scrub Pants - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['men','scrub-pant-men'],
+         " size":['small', 'medium', 'large'],
+          "img" :"scrub-pant-men/jogger-scrub-pant3.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -688,17 +583,17 @@ const data = [
       ],
     },
     {
-      header: "LONG SLEEVES BLAZER MEN",
-      gender: "male",
-      products: [
+      "header": "LONG COAT WOMEN",
+      "gender": "female",
+      "products": [
         {
-          title: "Long Sleeves Blazer Pro+® - Male",
-          desc: "MoveTechⓇ Plus",
-          price: "PHP 1,495",
-          categories:['men','long-sleeve-blazer-men'],
-          size:['small', 'medium', 'large'],
-          img: "long-sleeves-blazer-men/long-sleeves-blazer-pro.png",
-          colors: [
+          "title": "Long Coat Pro+® - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['women','long-coat-women'],
+         " size":['small', 'medium', 'large'],
+          "img" :"long-coat-women/long-coat-women.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -708,35 +603,13 @@ const data = [
           ],
         },
         {
-          title: "Long Sleeves Blazer  - Male",
-          sub: "MoveTechⓇ Plus",
-          price: "PHP 1,495",
-          categories:['men','long-sleeve-blazer-men'],
-          size:['small', 'medium', 'large'],
-          img: "long-sleeves-blazer-men/long-sleeves-blazer-men.png",
-          colors: [
-            "#814500",
-            "#9f687f",
-            "#387e7c",
-            "#333541",
-            "#9f687f",
-            "#814500",
-          ],
-        },
-      ],
-    },
-    {
-      header: "SHORT SLEEVES BLAZER WOMEN",
-      gender: "female",
-      products: [
-        {
-          title: "Short Sleeves Blazer - Women",
-          sub: "MoveTechⓇ Plus",
-          price: "PHP 1,495",
-          categories:['women','long-sleeve-blazer-women'],
-          size:['small', 'medium', 'large'],
-          img: "short-sleeves-blazer-women/short-sleeves-blazer.png",
-          colors: [
+          "title": "Long Coat Pro+® - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['women','long-coat-women'],
+         " size":['small', 'medium', 'large'],
+          "img" :"long-coat-women/long-coat-women2.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
@@ -748,17 +621,153 @@ const data = [
       ],
     },
     {
-      header: "SHORT SLEEVES BLAZER MEN",
-      gender: "male",
-      products: [
+      "header": "LONG COAT MEN",
+      "gender": "male",
+      "products": [
         {
-          title: "Short Sleeves Blazer - Women",
-          sub: "MoveTechⓇ Plus",
-          price: "PHP 1,495",
-          categories:['men','long-sleeve-blazer-women'],
-          size:['small', 'medium', 'large'],
-          img: "short-sleeves-blazer-women/short-sleeves-blazer-men.png",
-          colors: [
+          "title": "Long Coat Pro+® - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['men','long-coat-men'],
+         " size":['small', 'medium', 'large'],
+          "img" :"long-coat-men/long-coat-men.png",
+          "colors": [
+            "#814500",
+            "#9f687f",
+            "#387e7c",
+            "#333541",
+            "#9f687f",
+            "#814500",
+          ],
+        },
+        {
+          "title": "Long Coat Pro+® - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['men','long-coat-men'],
+          "size":['small', 'medium', 'large'],
+          "img": "long-coat-men/long-coat-pro+.png",
+          "colors": [
+            "#814500",
+            "#9f687f",
+            "#387e7c",
+            "#333541",
+            "#9f687f",
+            "#814500",
+          ],
+        },
+      ],
+    },
+    {
+      "header": "LONG SLEEVES BLAZER WOMEN",
+      "gender": "female",
+      "products": [
+        {
+          "title": "Long Sleeves Blazer Pro+® - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "1495",
+          "categories":['women','long-sleeve-blazer-women'],
+          "size":['small', 'medium', 'large'],
+          "img": "long-sleeve-blazer-women/pro-longsleeves-women01.jpg",
+          "colors": [
+            "#814500",
+            "#9f687f",
+            "#387e7c",
+            "#333541",
+            "#9f687f",
+            "#814500",
+          ],
+        },
+        {
+          "title": "Long Sleeves Blazer  - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "PHP 1495",
+          "categories":['women','long-sleeve-blazer-women'],
+          "size":['small', 'medium', 'large'],
+          "img": "long-sleeve-blazer-women/long-sleeves-blazer.png",
+          "colors": [
+            "#814500",
+            "#9f687f",
+            "#387e7c",
+            "#333541",
+            "#9f687f",
+            "#814500",
+          ],
+        },
+      ],
+    },
+    {
+      "header": "LONG SLEEVES BLAZER MEN",
+      "gender": "male",
+      "products": [
+        {
+          "title": "Long Sleeves Blazer Pro+® - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "PHP 1495",
+         "categories":['men','long-sleeve-blazer-men'],
+          "size":['small', 'medium', 'large'],
+          "img": "long-sleeves-blazer-men/long-sleeves-blazer-pro.png",
+          "colors": [
+            "#814500",
+            "#9f687f",
+            "#387e7c",
+            "#333541",
+            "#9f687f",
+            "#814500",
+          ],
+        },
+        {
+          "title": "Long Sleeves Blazer  - Male",
+          "desc": "MoveTechⓇ Plus",
+          "price": "PHP 1495",
+          "categories":['men','long-sleeve-blazer-men'],
+          "size":['small', 'medium', 'large'],
+          "img": "long-sleeves-blazer-men/long-sleeves-blazer-men.png",
+          "colors": [
+            "#814500",
+            "#9f687f",
+            "#387e7c",
+            "#333541",
+            "#9f687f",
+            "#814500",
+          ],
+        },
+      ],
+    },
+    {
+      "header": "SHORT SLEEVES BLAZER WOMEN",
+      "gender": "female",
+      "products": [
+        {
+          "title": "Short Sleeves Blazer - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "PHP 1495",
+          "categories":['women','long-sleeve-blazer-women'],
+          "size":['small', 'medium', 'large'],
+          "img": "short-sleeves-blazer-women/short-sleeves-blazer.png",
+          "colors": [
+            "#814500",
+            "#9f687f",
+            "#387e7c",
+            "#333541",
+            "#9f687f",
+            "#814500",
+          ],
+        },
+      ],
+    },
+    {
+      "header": "SHORT SLEEVES BLAZER MEN",
+      "gender": "male",
+      "products": [
+        {
+          "title": "Short Sleeves Blazer - Women",
+          "desc": "MoveTechⓇ Plus",
+          "price": "PHP 1495",
+          "categories":['men','long-sleeve-blazer-women'],
+          "size":['small', 'medium', 'large'],
+         " img": "short-sleeves-blazer-women/short-sleeves-blazer-men.png",
+          "colors": [
             "#814500",
             "#9f687f",
             "#387e7c",
