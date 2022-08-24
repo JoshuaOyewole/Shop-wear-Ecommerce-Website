@@ -1,6 +1,8 @@
 import React from 'react';
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
+import Announcement from "../components/Announcement";
+import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -153,6 +155,8 @@ const Product = () => {
   };
   return (
     <Container>
+    
+      <Announcement />
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -191,7 +195,7 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-   
+      <Newsletter />
 
     </Container>
   );
