@@ -1,4 +1,4 @@
-
+import "react-awesome-lightbox/build/style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './assets/css/style.css';
