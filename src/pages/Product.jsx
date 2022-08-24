@@ -208,7 +208,7 @@ const Product = () => {
                 <Amount>{quantity}</Amount>
                 <button className="btn btn-success btn-xs"  onClick={() => handleQuantity("inc")} >+</button>
               </AmountContainer>
-              <Button onClick={handleClick}>ADD TO CART</Button>
+              <Button onClick={handleClick}>ADD TO BAG</Button>
             </AddContainer>
           </InfoContainer>
         </Wrapper>

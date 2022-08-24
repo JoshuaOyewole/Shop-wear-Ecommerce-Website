@@ -6,7 +6,7 @@ import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
-import { useHistory } from "react-router";
+import { useHistory, Link} from "react-router";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-weight: 300;
+  font-weight: 600;
   text-align: center;
 `;
 
@@ -185,14 +185,19 @@ const Cart = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>YOUR BAG</Title>
+      <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+        <Title>
+          <Link to='/shop'>
+            Click here to continue shopping
+          </Link>
+        </Title>
+         {/*  <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <TopButton type="filled">CHECKOUT NOW</TopButton> */}
         </Top>
         <Bottom>
           <Info>
@@ -220,7 +225,7 @@ const Cart = () => {
                     <Remove />
                   </ProductAmountContainer>
                   <ProductPrice>
-                    $ {product.price * product.quantity}
+                    PHP {product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
@@ -231,19 +236,19 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>PHP {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>PHP 5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>PHP -5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>PHP {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="White Coat Shop "

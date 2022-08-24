@@ -342,6 +342,8 @@ const data = [
         title: "Long Sleeves Blazer Pro+® - Male",
         desc: "MoveTechⓇ Plus",
         price: "PHP 1,495",
+        categories:['men','long-sleeve-blazer-men'],
+        size:['small', 'medium', 'large'],
         img: "long-sleeves-blazer-men/long-sleeves-blazer-pro.png",
         colors: [
           "#814500",
@@ -356,6 +358,8 @@ const data = [
         title: "Long Sleeves Blazer  - Male",
         sub: "MoveTechⓇ Plus",
         price: "PHP 1,495",
+        categories:['men','long-sleeve-blazer-men'],
+        size:['small', 'medium', 'large'],
         img: "long-sleeves-blazer-men/long-sleeves-blazer-men.png",
         colors: [
           "#814500",
@@ -376,6 +380,8 @@ const data = [
         title: "Short Sleeves Blazer - Women",
         sub: "MoveTechⓇ Plus",
         price: "PHP 1,495",
+        categories:['women','long-sleeve-blazer-women'],
+        size:['small', 'medium', 'large'],
         img: "short-sleeves-blazer-women/short-sleeves-blazer.png",
         colors: [
           "#814500",
@@ -393,9 +399,11 @@ const data = [
     gender: "male",
     products: [
       {
-        title: "Short Sleeves Blazer - Male",
+        title: "Short Sleeves Blazer - Women",
         sub: "MoveTechⓇ Plus",
         price: "PHP 1,495",
+        categories:['men','long-sleeve-blazer-women'],
+        size:['small', 'medium', 'large'],
         img: "short-sleeves-blazer-women/short-sleeves-blazer-men.png",
         colors: [
           "#814500",
