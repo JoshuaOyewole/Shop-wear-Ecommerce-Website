@@ -1,13 +1,40 @@
 import React from 'react';
-import {Container, Label, RadioLabel, Submit, Input, Radio} from "./auth.styled";
-/* import Navbar from "../components/NewNav";
-import Footer from "../components/NewFooter"; */
+import { Container, Label, RadioLabel, Submit, Input, Radio } from "./auth.styled";
+import { useState } from "react";
+import { register } from "../redux/apiCalls";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const Register = () => {
+  const [user, setUser] = useState({
+    firstname: undefined,
+    lastname: undefined,
+    username: undefined,
+    email: undefined,
+    password: undefined,
+    gender:undefined,
+    phone:undefined
+  });
+
+  const handleChange = (e) => {
+    setUser(
+      (prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value
+      }
+      )
+    )
+  }
+
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    register(dispatch, {user});
+  };
   return (
     <>
-     
       <Container>
         <div>
           <div className="header-spacer" />
@@ -16,32 +43,47 @@ const Register = () => {
             <div className="container mt-4 user__register-container ">
               <form method="post" action="#">
                 <Label className="mt-2 mb-0 ">First Name</Label>
-                <Input type="text" name="firstName" defaultValue />
+                <Input type="text" onChange={handleChange} name="firstname" defaultValue='' />
                 <Label className="mt-2 mb-0 ">Last Name</Label>
-                <Input type="text" name="lastName" defaultValue />
+                <Input type="text" onChange={handleChange} name="lastname" defaultValue='' />
                 <Label className="mt-2 mb-2 ">Gender</Label>
-                <Radio type="radio" name="gender" defaultValue="male" />
+                <Radio 
+                    type="radio" 
+                    checked={user.gender === 'Male'}
+                    onChange={handleChange} 
+                    name="gender" 
+                    defaultValue="Male" 
+                />
                 <RadioLabel htmlFor="male">Male</RadioLabel>
                 <br />
-                <Radio type="radio" name="gender" defaultValue="female" />
+                <Radio 
+                    type="radio" 
+                    name="gender" 
+                    defaultValue="Female" 
+                    checked={user.gender === 'Female'}
+                    onChange={handleChange} 
+                />
                 <RadioLabel htmlFor="female">Female</RadioLabel>
                 <br />
                 <Label className="mt-2 mb-0 ">Your Email</Label>
-                <Input type="text" name="email" />
+                <Input type="text" name="email" onChange={handleChange} />
                 <Label className="mt-2 mb-0 ">
                   Your Password (Minimum 8 characters)
                 </Label>
-                <Input type="password" name="password" />
+                <Input type="password" name="password" onChange={handleChange} />
                 <Label className="mt-2 mb-0 ">Confirm Password</Label>
-                <Input type="password" name="password_confirmation" />
+                <Input type="password" onChange={handleChange} name="password_confirmation" />
                 <Label className="mb-0 ">Mobile Number (Required)</Label>
-                <Input type="text" name="mobile" />
+                <Input type="text" onChange={handleChange} name="phone" />
                 <div className="float-end">
                   <Submit
                     type="submit"
                     defaultValue="Register"
+                    onClick={handleSubmit}
+                    disabled={isFetching}
                   />
                 </div>
+                {error && <Error>Something went wrong...</Error>}
                 <div style={{ clear: "both" }} />
               </form>
               <div className="mt-3">
@@ -53,9 +95,9 @@ const Register = () => {
           </div>
         </div>
       </Container>
-   
+
     </>
-   
+
   );
 };
 

@@ -11,14 +11,14 @@ import Testimonial from "../components/Testimonial"
 const IntroText = styled.p`
   width: 100%;
   max-width: 800px;
-  font-weight: 400;
-  font-size: 1.8rem;
+  font-weight: 600;
+  font-size: 2rem;
   text-align: center;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
-  ${mobile({ fontSize: "16px"})}
+  ${mobile({ fontSize: "24px"})}
 `;
 const Home = () => {
   return (
