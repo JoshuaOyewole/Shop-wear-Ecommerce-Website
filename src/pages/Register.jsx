@@ -43,7 +43,11 @@ const Register = () => {
             <div className="container mt-4 user__register-container ">
               <form method="post" action="#">
                 <Label className="mt-2 mb-0 ">First Name</Label>
-                <Input type="text" onChange={handleChange} name="firstname"  />
+                <Input 
+                    type="text" 
+                    onChange={handleChange} 
+                    name="firstname"  
+                />
                 <Label className="mt-2 mb-0 ">Last Name</Label>
                 <Input type="text" onChange={handleChange} name="lastname"  />
                 <Label className="mt-2 mb-2 ">Gender</Label>
@@ -66,7 +70,7 @@ const Register = () => {
                 <RadioLabel htmlFor="female">Female</RadioLabel>
                 <br />
                 <Label className="mt-2 mb-0 ">Your Email</Label>
-                <Input type="text" name="email" onChange={handleChange} />
+                <Input type="email" name="email" onChange={handleChange} />
                 <Label className="mt-2 mb-0 ">
                   Your Password (Minimum 8 characters)
                 </Label>
