@@ -350,9 +350,12 @@ body {
   .c-topnav--sm__link,
   .c-topnav--sm__link:link,
   .c-topnav--sm__link:visited {
-    margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    font-weight: 700;
     color: #fff !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
   }
   .c-dropdown {
     position: relative;
@@ -405,7 +408,6 @@ body {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
-    opacity: 0;
     -webkit-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out;
   }

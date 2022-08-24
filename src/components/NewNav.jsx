@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector, useDispatch } from "react-redux";
-import MenuButton from "../assets/png/icons/menu_black.png"
+import MenuButton from "../assets/png/icons/menu_black.png";
 
 const MenuItem2 = styled.div`
   font-size: 14px;
@@ -24,50 +24,40 @@ const MenuItem2 = styled.div`
 
 const NewNav = () => {
   const quantity = useSelector((state) => state.cart.quantity);
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <div className="c-topnav--black">
       <style dangerouslySetInnerHTML={{ __html: "" }} />
       <div className="c-topnav--sm__bag">
         <div className="position-relative">
-          <a className href="/cart">
-            <img
-              src={shop}
-              alt="contact us"
-              style={{ width: 20, height: 20 }}
-            />
-          </a>
+
+          <Link to="/cart">
+            <MenuItem2>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined className="c-topnav-links__link--right" />
+              </Badge>
+            </MenuItem2>
+          </Link>
+
         </div>
       </div>
-      {/*Navbar*/}
-      <nav id="topnav--sm" className="navbar navbar-light c-topnav--sm">
-        {/* Navbar brand */}
-        <a className="navbar-brand float-end" href="/">
-          <div id="topnav--sm__logo" />
-        </a>
-        <button
-          id="topnav--sm__button"
-          style={{}}
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#topnav--sm__collapsible"
-          aria-controls="topnav--sm__collapsible"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <img
-            id="topnav--sm__button__img"
-            className="c-topnav--sm__button--open"
-            src={MenuButton}
-            style={{ width: 25, height: 25 }}
-            alt="menu"
-          />
-        </button>
-        <div style={{ clear: "both" }} />
-        <style dangerouslySetInnerHTML={{ __html: "" }} />
-        {/* Collapsible content */}
-        <div className="collapse navbar-collapse" id="topnav--sm__collapsible">
-          <div className="d-flex justify-content-between text-center mt-3 mb-4">
+      <div
+        class="offcanvas offcanvas-start "
+        style={{ backgroundColor: "#405E94" }}
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close bg-text-white  text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body ">
+          <div className="d-flex justify-content-between text-center mb-2">
             <div className="c-topnav--sm__imgblk-div">
               <a href="#">
                 <img
@@ -111,26 +101,40 @@ const NewNav = () => {
           <ul className="navbar-nav mr-auto" style={{ marginTop: 40 }}>
             <li className="nav-item">
               <div className="nav-link c-topnav--sm__link">
-                <Link className="c-topnav__user-link" to="/register">
-                  Register
-                </Link>
-                |{" "}
-                <Link className="c-topnav__user-link" to="/login">
-                  login
-                </Link>
+                {currentUser ? (
+                  <Link className="c-topnav__user-link text-uppercase my-2" to="/profile">
+                    WELCOME, {currentUser.username}
+                  </Link>
+                ) : (
+                  <>
+                    <Link to="/register">
+                      <span className="c-topnav__user-link">Register </span>
+                    </Link>
+                    |
+                    <Link to="/login">
+                      <span className="c-topnav__user-link"> login</span>
+                    </Link>
+                  </>
+                )}
               </div>
             </li>
             <li className="nav-item d-flex align-items-center">
               <Link to="/cart">
-                <MenuItem2>
-                  <Badge badgeContent={quantity} color="primary">
-                    <ShoppingCartOutlined className="c-topnav--sm__link" />
-                  </Badge>
-                </MenuItem2>
+                <div className="d-flex align-items-center">
+                  <p className="nav-link c-topnav--sm__link">Cart</p>
+                  <MenuItem2>
+                    <Badge badgeContent={quantity} color="primary">
+                      <ShoppingCartOutlined className="c-topnav--sm__link" />
+                    </Badge>
+                  </MenuItem2>
+                </div>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link c-topnav--sm__link" to="/shop?cat=female">
+              <Link
+                className="nav-link c-topnav--sm__link"
+                to="/shop?cat=female"
+              >
                 Shop Women
               </Link>
             </li>
@@ -147,7 +151,9 @@ const NewNav = () => {
             <li className="nav-item">
               <Link
                 className="nav-link c-topnav--sm__link"
+
                 to="/made-to-measure/scrubsuit"
+
               >
                 Made-To-Measure
               </Link>
@@ -170,7 +176,31 @@ const NewNav = () => {
           </ul>
           {/* Links */}
         </div>
-        {/* Collapsible content */}
+      </div>
+      {/*Navbar*/}
+      <nav id="topnav--sm" className="navbar navbar-light c-topnav--sm">
+        {/* Navbar brand */}
+        <a className="navbar-brand float-end" href="/">
+          <div id="topnav--sm__logo" />
+        </a>
+        <button
+          className="navbar-toggler m-1"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <img
+            id="topnav--sm__button__img"
+            className="c-topnav--sm__button--open"
+            src={MenuButton}
+            style={{ width: 25, height: 25 }}
+            alt="menu"
+          />
+        </button>
+
+        <div style={{ clear: "both" }} />
+        <style dangerouslySetInnerHTML={{ __html: "" }} />
       </nav>
       <div className="c-topnav w-100 px-4 text-center">
         <div className="c-topnav-links float-start">
@@ -180,11 +210,9 @@ const NewNav = () => {
                 id="topnav__button"
                 className="navbar-toggler"
                 type="button"
-                data-toggle="collapse"
-                data-target="#topnav--sm__collapsible"
-                aria-controls="topnav--sm__collapsible"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
                 style={{ position: "relative", top: 3 }}
               >
                 <div className="c-burgermenu" />
@@ -199,15 +227,11 @@ const NewNav = () => {
             </div> */}
             <div className="d-inline-block">
               <div className="c-dropdown">
-                <Link className="c-topnav-links__link--left" to="/shop?cat=female">
+                <Link
+                  className="c-topnav-links__link--left"
+                  to="/shop?cat=female"
+                >
                   Women
-                </Link>
-              </div>
-            </div>
-            <div className="d-inline-block">
-              <div className="c-dropdown">
-                <Link className="c-topnav-links__link--left" to="/shop?cat=male">
-                  Men
                 </Link>
               </div>
             </div>
@@ -215,8 +239,20 @@ const NewNav = () => {
               <div className="c-dropdown">
                 <Link
                   className="c-topnav-links__link--left"
+                  to="/shop?cat=male"
+                >
+                  Men
+                </Link>
+              </div>
+            </div>
+            <div className="d-inline-block">
+              <div className="c-dropdown">
+
+                <Link
+                  className="c-topnav-links__link--left"
                   to="/made-to-measure/scrubsuit"
                 >
+
                   Made-To-Measure
                 </Link>
               </div>
@@ -230,13 +266,24 @@ const NewNav = () => {
           <div className="float-end">
             <div className="d-inline-block">
               <div className="c-topnav-links__link--right">
-                <Link className="c-topnav-links__link--right" to="/register">
-                  Register
-                </Link>
-                |
-                <Link className="c-topnav-links__link--right" to="/login">
-                  login
-                </Link>
+                {currentUser ? (
+                  <Link className="c-topnav-links__link--right text-uppercase" to="/profile">
+                    WELCOME, {currentUser.username}
+                  </Link>
+                ) : (
+                  <>
+                    <Link
+                      className="c-topnav-links__link--right"
+                      to="/register"
+                    >
+                      Register
+                    </Link>
+                    |
+                    <Link className="c-topnav-links__link--right" to="/login">
+                      login
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
             <div className="d-inline-block position-relative">
