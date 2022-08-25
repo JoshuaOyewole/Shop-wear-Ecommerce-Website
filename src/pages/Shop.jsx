@@ -87,7 +87,7 @@ const Shop = () => {
                     >
                       {section.products.map((product, i) => (
                         <ShopCard
-                          id={product._id}
+                          id={product.pid}
                           name={product.title}
                           sub={product.description}
                           price={product.price}
@@ -95,7 +95,7 @@ const Shop = () => {
                           size={product.size}
                           img={product.img}
                           inStock={product.inStock}
-                          key={product._id}
+                          key={product.pid}
                         />
                       ))}
                     </div>
@@ -118,7 +118,7 @@ const Shop = () => {
                     >
                       {section.products.map((product, i) => (
                         <ShopCard
-                          id={product._id}
+                          id={product.pid}
                           name={product.title}
                           sub={product.description}
                           price={product.price}
@@ -126,7 +126,7 @@ const Shop = () => {
                           size={product.size}
                           img={product.img}
                           inStock={product.inStock}
-                          key={product._id}
+                          key={product.pid}
                         />
                       ))}
                     </div>
