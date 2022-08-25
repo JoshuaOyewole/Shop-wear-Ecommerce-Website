@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ShopCard from "../components/ShopCard";
 import { useLocation } from "react-router-dom";
+import {Link} from 'react-scroll'
 import axios from "axios";
 
 function useQuery() {
@@ -34,25 +35,25 @@ const Shop = () => {
       <div className="c-height-70">
         <div className="c-shop__top-block" />
         <div className="c-shop__topnav">
-          <div className="c-shop__topnav__links">
-            <div id="scrubsuitLink" className="c-shop__topnav__link">
-              Scrubsuits
-            </div>
-            <div id="scrubtopLink" className="c-shop__topnav__link">
+          <div className="c-shop__topnav__links">      
+            <Link  to={cat === "men" ? "scrubTopMen" : "scrubTopWomen"} spy={true} smooth={true}  className="c-shop__topnav__link">
               Scrub Top
-            </div>
-            <div id="scrubpantsLink" className="c-shop__topnav__link">
+            </Link>
+            <Link  to={cat === "men" ? "scrubPantMen" : "scrubPantWomen"} spy={true} smooth={true}  className="c-shop__topnav__link">
               Scrub Pants
-            </div>
-            <div id="shortSleevesBlazerLink" className="c-shop__topnav__link">
+            </Link>
+            <Link  to={cat === "men" ? "shortSleeveBlazerMen" : "shortSleeveBlazerWomen"} spy={true} smooth={true}  className="c-shop__topnav__link">
               Blazer Short
-            </div>
-            <div id="longSleevesBlazerLink" className="c-shop__topnav__link">
+            </Link>
+            <Link  to={cat === "men" ? "longSleeveBlazerMen" : "longSleeveBlazerWomen"} spy={true} smooth={true} id="longSleevesBlazerLink" className="c-shop__topnav__link">
               Blazer Long
-            </div>
-            <div id="longCoatLink" className="c-shop__topnav__link">
+            </Link>
+            <Link  to={cat === "men" ? "longCoatMen" : "longCoatWomen"} spy={true} smooth={true} id="longCoatLink" className="c-shop__topnav__link">
               Lab Coat
-            </div>
+            </Link>
+            <Link  to={cat === "men" ? "scrubTopMen" : "scrubTopWomen"} spy={true} smooth={true} id="scrubsuitLink" className="c-shop__topnav__link">
+              Scrubsuits
+            </Link>
             <div style={{ clear: "both" }} />
           </div>
           <div style={{ clear: "both" }} />
@@ -75,7 +76,7 @@ const Shop = () => {
           products
               .filter((section) => section.gender == "male")
               .map((section, i) => (
-                <div key={i}>
+                <div id={section.section} key={i}>
                   <div id="scrubtopHeader" className="c-shop__header">
                     {section.header}
                   </div>
@@ -106,7 +107,7 @@ const Shop = () => {
           products
               .filter((section) => section.gender == "female")
               .map((section, i) => (
-                <div key={i}>
+                <div id={section.section} key={i}>
                   <div id="scrubtopHeader" className="c-shop__header">
                     {section.header}
                   </div>
@@ -134,7 +135,7 @@ const Shop = () => {
               ))
           : products.length > 0 &&
             products.map((section, i) => (
-              <div key={i}>
+              <div id={section.section} key={i}>
                 <div id="scrubtopHeader" className="c-shop__header">
                   {section.header}
                 </div>

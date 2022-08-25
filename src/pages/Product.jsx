@@ -126,7 +126,7 @@ const Button = styled.button`
 const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
@@ -171,7 +171,7 @@ const Product = () => {
     <>
       <Container>
         <Announcement />
-        {product._id === null ? (
+        {product === null ? (
           <>Loading...</>
         ) : (
           <Wrapper>
