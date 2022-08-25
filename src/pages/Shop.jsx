@@ -133,7 +133,7 @@ const Shop = () => {
                   </div>
                 </div>
               ))
-          : products.length > 0 &&
+          : products.length > 20 &&
             products.map((section, i) => (
               <div id={section.section} key={i}>
                 <div id="scrubtopHeader" className="c-shop__header">
