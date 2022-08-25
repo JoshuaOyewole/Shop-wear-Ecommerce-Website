@@ -9,7 +9,9 @@ const ShopCard = ({ id, name, img, colors, price, sub, size, inStock }) => {
   return (
     <div className="col-md-4 c-shop__block__col">
       <Link to={`/product/${id}`}>
-        <img className="c-shop__3-block__img" src={`https://whitecoatshop.netlify.app/images/${img}`} alt={name} />
+
+        <img className="c-shop__3-block__img" src={`/images/${img}`} alt={name} />
+
         <div className="c-shop__item__name">{name}</div>
         <div className="c-shop__item__sub">{sub}</div>
         <div className="c-shop__item__price">{dollarUS.format(price)}</div>
