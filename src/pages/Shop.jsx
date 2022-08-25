@@ -133,7 +133,7 @@ const Shop = () => {
                   </div>
                 </div>
               ))
-          : products.length > 20 &&
+          : products.length > 0 &&
             products.map((section, i) => (
               <div id={section.section} key={i}>
                 <div id="scrubtopHeader" className="c-shop__header">
@@ -148,7 +148,7 @@ const Shop = () => {
                       <ShopCard
                         id={product._id}
                         name={product.title}
-                        sub={product.description}
+                        sub={product.desc}
                         price={product.price}
                         colors={product.colors}
                         size={product.size}
