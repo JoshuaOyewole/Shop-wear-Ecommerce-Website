@@ -164,7 +164,7 @@ const Product = () => {
   };
   let dollarUS = Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "PHP",
   });
   return (
 
