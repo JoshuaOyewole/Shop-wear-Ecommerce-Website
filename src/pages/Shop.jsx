@@ -441,7 +441,97 @@ const Shop = () => {
         <div className="container-fluid c-shop__container">
           <div className="row c-shop__row--3" style={{ maxWidth: 1440 }} />
         </div>
-        {products.length < 1 ? (
+        {cat == "men"
+          ? products.length > 0 &&
+          products
+              .filter((section) => section.gender == "male")
+              .map((section, i) => (
+                <div key={i}>
+                  <div id="scrubtopHeader" className="c-shop__header">
+                    {section.header}
+                  </div>
+                  <div className="container-fluid c-shop__container">
+                    <div
+                      className="row c-shop__row--3"
+                      style={{ maxWidth: 1440 }}
+                    >
+                      {section.products.map((product, i) => (
+                        <ShopCard
+                          id={product._id}
+                          name={product.title}
+                          sub={product.description}
+                          price={product.price}
+                          colors={product.colors}
+                          size={product.size}
+                          img={product.img}
+                          inStock={product.inStock}
+                          key={product._id}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))
+          : cat == "women"
+          ? products.length > 0 &&
+          products
+              .filter((section) => section.gender == "female")
+              .map((section, i) => (
+                <div key={i}>
+                  <div id="scrubtopHeader" className="c-shop__header">
+                    {section.header}
+                  </div>
+                  <div className="container-fluid c-shop__container">
+                    <div
+                      className="row c-shop__row--3"
+                      style={{ maxWidth: 1440 }}
+                    >
+                      {section.products.map((product, i) => (
+                        <ShopCard
+                          id={product._id}
+                          name={product.title}
+                          sub={product.description}
+                          price={product.price}
+                          colors={product.colors}
+                          size={product.size}
+                          img={product.img}
+                          inStock={product.inStock}
+                          key={product._id}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))
+          : products.length > 0 &&
+            products.map((section, i) => (
+              <div key={i}>
+                <div id="scrubtopHeader" className="c-shop__header">
+                  {section.header}
+                </div>
+                <div className="container-fluid c-shop__container">
+                  <div
+                    className="row c-shop__row--3"
+                    style={{ maxWidth: 1440 }}
+                  >
+                    {section.products.map((product, i) => (
+                      <ShopCard
+                        id={product._id}
+                        name={product.title}
+                        sub={product.description}
+                        price={product.price}
+                        colors={product.colors}
+                        size={product.size}
+                        img={product.img}
+                        inStock={product.inStock}
+                        key={product._id}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+        {/* {products.length < 1 ? (
           <>Loading...</>
         ) : (
           <div>
@@ -466,12 +556,12 @@ const Shop = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* {
       cat == "male" ?
-      data.length > 0 &&
-      data.filter(section => section.gender == "male").map((section, i) => (
+      products.length > 0 &&
+      products.filter(section => section.gender == "male").map((section, i) => (
         <div key={i}>
           <div id="scrubtopHeader" className="c-shop__header">
             {section.header}
@@ -494,8 +584,8 @@ const Shop = () => {
             </div>
           </div>
         </div>
-      )) : cat == "female" ? data.length > 0 &&
-      data.filter(section => section.gender == "female").map((section, i) => (
+      )) : cat == "female" ? products.length > 0 &&
+      products.filter(section => section.gender == "female").map((section, i) => (
         <div key={i}>
           <div id="scrubtopHeader" className="c-shop__header">
             {section.header}
@@ -518,8 +608,8 @@ const Shop = () => {
             </div>
           </div>
         </div>
-      )) : data.length > 0 &&
-      data.map((section, i) => (
+      )) : products.length > 0 &&
+      products.map((section, i) => (
         <div key={i}>
          
           <div id="scrubtopHeader" className="c-shop__header">
