@@ -22,6 +22,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-weight: 600;
   text-align: center;
+${mobile({ fontSize: "16px" })}
 `;
 
 const Top = styled.div`
