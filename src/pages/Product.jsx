@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Lightbox from "react-awesome-lightbox";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 //import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
-import { mobile } from "../responsive";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
-import { useDispatch } from "react-redux";
-import Lightbox from "react-awesome-lightbox";
+import { publicRequest } from "../requestMethods";
+import { mobile } from "../responsive";
+import { animateScroll as scroll } from "react-scroll";
 
 const Container = styled.div`
   margin: 65px 0;
@@ -52,11 +52,11 @@ const Price = styled.span`
 `;
 
 const FilterContainer = styled.div`
-  width: 50%;
+  width: 80%;
   margin: 10px 0px;
   display: flex;
   justify-content: space-between;
-  ${mobile({ width: "100%" })}
+  ${mobile({ width: "100%", justifyContent: "space-between" })}
 `;
 
 const Filter = styled.div`
@@ -141,14 +141,20 @@ const Product = () => {
   const [embroideryLogo, setEmbroideryLogo] = useState(false);
   const dispatch = useDispatch();
 
+  const scrollToTop = () =>{
+    scroll.scrollToTop();
+  }
+
+
   useEffect(() => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
-        setProduct(res.data);
+        setProduct(res.data[0]);
       } catch {}
     };
     getProduct();
+    scrollToTop()
   }, [id]);
 
   const handleQuantity = (type) => {
@@ -176,7 +182,7 @@ const Product = () => {
         ) : (
           <Wrapper>
             <ImgContainer>
-              <Image src={product.img} />
+              <Image src={`/images/${product.img}`} />
             </ImgContainer>
             <InfoContainer>
               <div className="c-shop-item__title">{product.title}</div>
@@ -184,14 +190,14 @@ const Product = () => {
               <Price> {dollarUS.format(product.price)}</Price>
               <FilterContainer>
                 <Filter>
-                  <FilterTitle>Color</FilterTitle>
+                  <FilterTitle>Colors:</FilterTitle>
 
                   {/* {product.color?.map((c) => (
                  <FilterColor color={c} key={c} onClick={() => setColor(c)} />
                ))} */}
                   <div className="d-flex flex-wrap justify-content-center align-items-center mt-1">
-                    {product.color &&
-                      product.color.map((c, i) => (
+                    {product.colors &&
+                      product.colors.map((c, i) => (
                         <div
                           key={i}
                           onClick={() => setColor(c)}
@@ -209,7 +215,7 @@ const Product = () => {
                   </div>
                 </Filter>
                 <Filter>
-                  <FilterTitle>Size</FilterTitle>
+                  <FilterTitle>Size: </FilterTitle>
                   <select
                     className="form-control ms-2 px-4 "
                     onChange={(e) => setSize(e.target.value)}
