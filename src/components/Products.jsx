@@ -22,7 +22,7 @@ const Products = ({ cat, filters, sort }) => {
         const res = await axios.get(
           cat
             ? `https://whitecoatmanila.herokuapp.com/api/products?category=${cat}`
-            : "https://whitecoatmanila.herokuapp.com/api/products"
+            : "https://whitecoatmanila.herokuapp.com/api/products/sproducts"
         );
         setProducts(res.data);
       } catch (err) {}
